@@ -27,10 +27,10 @@
             <span class="help-block" *ngIf="(productNameVar.touched ||
                                                          productNameVar.dirty || product.id !== 0) &&
                                                          productNameVar.errors">
-                            <span *ngIf="productNameVar.errors.required">
+                            <span *ngIf="productNameVar.errors['required']">
                                 Product name is required.
                             </span>
-                            <span *ngIf="productNameVar.errors.minlength">
+                            <span *ngIf="productNameVar.errors['minlength']">
                                 Product name must be at least three characters.
                             </span>
                         </span>
@@ -55,7 +55,7 @@
             <span class="help-block" *ngIf="(productCodeVar.touched ||
                                                          productCodeVar.dirty || product.id !== 0) &&
                                                          productCodeVar.errors">
-                            <span *ngIf="productCodeVar.errors.required">
+                            <span *ngIf="productCodeVar.errors['required']">
                                 Product code is required.
                             </span>
                         </span>

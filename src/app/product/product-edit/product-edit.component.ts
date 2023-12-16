@@ -23,7 +23,6 @@ export class ProductEditComponent {
     return  !!this.editForm.dirty
   }
 
-
   constructor(private productService: ProductService,
               private router: Router,
               private route: ActivatedRoute) {

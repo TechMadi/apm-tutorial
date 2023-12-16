@@ -11,9 +11,10 @@
         <!-- <input type='text'
                      [ngModel]='listFilter'
                      (ngModelChange)='onFilterChange($event)' /> -->
-        <input type='text' #listFilter
-               [(ngModel)]='listFilter' />
+
       </div>
+      <input type='text'
+                   [(ngModel)]='listFilter' />
     </div>
     <div class='row' [hidden]='!listFilter'>
       <div class='col-md-10'>
