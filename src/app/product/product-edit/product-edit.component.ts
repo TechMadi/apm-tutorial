@@ -20,7 +20,7 @@ export class ProductEditComponent {
 
 
   get isDirty():boolean{
-    return  this.editForm.dirty ? true:false
+    return  !!this.editForm.dirty
   }
 
 

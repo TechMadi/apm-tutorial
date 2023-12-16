@@ -1,9 +1,10 @@
-import {createComponent, Injectable} from "@angular/core";
+
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
-import * as http from "http";
+
 
 import {IProduct} from "./product";
-import {catchError, ErrorObserver, Observable, of, tap, throwError} from "rxjs";
+import { ErrorObserver, Observable, of, tap} from "rxjs";
+import {Injectable} from "@angular/core";
 
 @Injectable()
 export  class ProductService{
@@ -89,8 +90,11 @@ export  class ProductService{
 
   private createProduct(product:IProduct,headers:HttpHeaders):Observable<IProduct>{
     product.id=null;
-    return this.http.post<IProduct>(this.productsUrl,product,{headers:headers}).pipe()
-    tap((data:IProduct)=>console.log('createProduct:'+JSON.stringify(data)))
+    return this.http.post<IProduct>(this.productsUrl,product,{headers:headers}).
+    pipe(
+
+      tap((data:IProduct)=>console.log('createProduct:'+JSON.stringify(data)))
+    )
   }
 
   private updateProduct(product:IProduct,headers:HttpHeaders):Observable<IProduct>{

@@ -1,4 +1,4 @@
-import {ActivatedRouteSnapshot, CanActivateFn, CanDeactivateFn, Router, RouterStateSnapshot} from '@angular/router';
+import { CanDeactivateFn, Router} from '@angular/router';
 import {inject, Injectable} from "@angular/core";
 import {ProductEditComponent} from "../product-edit/product-edit.component";
 
@@ -8,7 +8,7 @@ import {ProductEditComponent} from "../product-edit/product-edit.component";
 })
 class ProductEditService {
 
-  constructor(private router: Router) {}
+  constructor() {}
 
   canDeactivate(component:ProductEditComponent): boolean {
     if(component.isDirty){
